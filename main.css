@@ -8,10 +8,6 @@
   --gray: hsl(228, 12%, 48%);
   --black: hsl(212, 21%, 14%);
   --white: hsl(0, 0%, 100%);
-
-  /* BREAKPOINTS */
-
-  --desktop: 90em;
 }
 
 * {
@@ -130,7 +126,6 @@ section {
 @media screen and (min-width: 89em) {
   .product {
     inline-size: 33.33%;
-    block-size: max-content;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
@@ -142,7 +137,6 @@ section {
   }
 
   .product__hero {
-    inline-size: 100%;
     block-size: 100%;
     border-radius: 7px 0px 0px 7px;
   }

@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
 
 :root {
-  /* COLORS */
-
   --cyan: hsl(158, 36%, 37%);
   --cream: hsl(30, 38%, 92%);
   --gray: hsl(228, 12%, 48%);
@@ -37,13 +35,14 @@ section {
 
 .product {
   inline-size: 325px;
-  block-size: auto;
+  block-size: max-content;
   border-radius: 7px;
   background-color: var(--white);
 }
 
 .product__hero {
   inline-size: 100%;
+  aspect-ratio: 3/2;
   border-radius: 7px 7px 0px 0px;
   /* it will automatically crop the image to save proportions  */
   object-fit: cover;
@@ -66,17 +65,17 @@ section {
 .product__pricing--old,
 .product__button {
   /* font size  will increase from 12 on 375 screen resolution 
-  to 14 on 4k screen resolution */
-  font-size: clamp(0.75rem, calc(0.73rem + 0.09vw), 0.88rem);
+  to 14 on 1920 screen resolution */
+  font-size: clamp(0.75rem, calc(0.72rem + 0.13vw), 0.88rem);
 }
 
 .product__title,
 .product__pricing {
   /* set Fraunces as normal and Garamond as fallback font */
   font-family: "Fraunces", "Garamond", serif;
-  /* font size  will increase from 26 on 375 screen resolution 
-  to 28 on 4k screen resolution */
-  font-size: clamp(1.63rem, calc(1.6rem + 0.09vw), 1.75rem);
+  /* font size  will increase from 24 on 375 screen resolution 
+  to 28 on 1920 screen resolution */
+  font-size: clamp(1.5rem, calc(1.44rem + 0.26vw), 1.75rem);
 }
 
 .product__title {
@@ -89,7 +88,7 @@ section {
 }
 
 .product__description {
-  line-height: 1.5;
+  line-height: 1.75;
   color: var(--gray);
 }
 
@@ -127,6 +126,7 @@ section {
 @media screen and (min-width: 89em) {
   .product {
     inline-size: 33.33%;
+    block-size: max-content;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
@@ -135,9 +135,11 @@ section {
     inline-size: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
   }
 
   .product__hero {
+    aspect-ratio: 2/3;
     block-size: 100%;
     border-radius: 7px 0px 0px 7px;
   }
